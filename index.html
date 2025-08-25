@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aneena Shajahan — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="cursor"></div><div class="cursor-ring"></div>
+    <div id="app">
+      <header class="site-header">
+        <a href="/" class="logo magnetic" data-strength="0.4">Aneena Shajahan</a>
+        <nav class="site-nav">
+          <a href="#about" class="magnetic" data-strength="0.2">About</a><a href="#skills" class="magnetic" data-strength="0.2">Skills</a><a href="#work" class="magnetic" data-strength="0.2">Work</a><a href="#contact" class="magnetic" data-strength="0.2">Contact</a>
+        </nav>
+      </header>
+      <main>
+        <section class="hero"><canvas id="webgl-canvas"></canvas><div class="hero-content"><img src="/aneena-profile.jpg" alt="Aneena Shajahan Profile" class="profile-picture"/><div class="hero-text"><h1 class="split">Welcome to the<br>playground of<br>Aneena Shajahan</h1><p class="split">Developer | UI/UX Designer | Game Artist | 3D Modeler</p></div></div></section>
+        <section id="about" class="intro-text-section"><canvas id="about-canvas" class="intro-canvas"></canvas><div class="intro-left"><p class="intro-paragraph split">A passionate and <em>driven graduate</em> with a strong foundation in computer applications and physics.</p></div><div class="intro-right"><p class="intro-paragraph split">My journey has equipped me with a <em>versatile skill set</em> spanning development, 3D design, and game artistry.</p></div></section>
+        <section id="skills" class="skills-section"><div class="skills-content"><h2 class="skills-title split">Skills & Expertise</h2><div class="skills-cards-container"><div class="skill-card"><div class="card-inner"><div class="card-front"><span class="card-initial">A</span></div><div class="card-back"><div class="card-header"><span>Programming</span><span>P</span></div><ul><li>Python</li><li>Java</li><li>C & C++</li><li>SQL</li><li>HTML / CSS</li><li>JavaScript / PHP</li><li>Web Development</li></ul><div class="card-footer"><span>P</span><span>Programming</span></div></div></div></div><div class="skill-card"><div class="card-inner"><div class="card-front"><span class="card-initial">A</span></div><div class="card-back"><div class="card-header"><span>3D & Motion</span><span>M</span></div><ul><li>Unity</li><li>Blender</li><li>Autodesk Maya</li><li>Spline</li><li>3D Modeling</li><li>Game Design</li><li>Animation</li></ul><div class="card-footer"><span>M</span><span>3D & Motion</span></div></div></div></div><div class="skill-card"><div class="card-inner"><div class="card-front"><span class="card-initial">A</span></div><div class="card-back"><div class="card-header"><span>Design</span><span>D</span></div><ul><li>Figma</li><li>UI/UX Design</li><li>Adobe Illustrator</li><li>Prototyping</li><li>Creative Skills</li><li>Presentation Skills</li><li>Content Creation</li></ul><div class="card-footer"><span>D</span><span>Design</span></div></div></div></div><div class="skill-card"><div class="card-inner"><div class="card-front"><span class="card-initial">A</span></div><div class="card-back"><div class="card-header"><span>Professional</span><span>S</span></div><ul><li>Leadership</li><li>Teamwork</li><li>Communication</li><li>Planning</li><li>Adaptability</li><li>Supervision</li><li>Microsoft Office</li></ul><div class="card-footer"><span>S</span><span>Professional</span></div></div></div></div></div></div></section>
+        <section id="work" class="work-section"><h2 class="section-title split">Selected Projects</h2><div class="project-list"><div class="project-item" data-video="/projects/product-reveal.mp4" data-img="/projects/product-reveal.mp4"><div class="project-thumbnail"><img src="/projects/product-reveal.png" alt="3D Product Reveal Thumbnail"></div><a href="#" class="project-title">3D Product Reveal</a><span class="project-meta">Autodesk Maya / Figma / Blender / Spline</span></div><div class="project-item" data-video="/projects/pu-buildings.mp4" data-img="/projects/pu-buildings.mp4"><div class="project-thumbnail"><img src="/projects/pu-buildings.png" alt="Pondicherry University 3D Model Thumbnail"></div><a href="#" class="project-title">Pondicherry University 3D Model</a><span class="project-meta">Blender / Unity</span></div><div class="project-item" data-video="/projects/cnn-viz.mp4" data-img="/projects/cnn-viz.mp4"><div class="project-thumbnail"><img src="/projects/cnn-viz.png" alt="CNN Visualization Thumbnail"></div><a href="#" class="project-title">CNN Visualization</a><span class="project-meta">Unity / Illustrator</span></div></div></section>
+        <section id="contact" class="final-sequence"><div class="final-sequence-content"><canvas id="starfield-canvas"></canvas><div class="final-sequence-text"><h2 class="split">Let's dive into a new imagination...</h2></div><div class="final-sequence-endcard"><h3>Hi.</h3><h2>Let's work together.</h2><div class="contact-links"><a href="mailto:aneena7862@gmail.com" class="cta-link magnetic" data-strength="0.3">aneena7862@gmail.com</a><a href="https://linkedin.com/in/aneena-shajahan-507464369" target="_blank" class="cta-link magnetic" data-strength="0.3">LinkedIn</a></div></div></div></section>
+      </main>
+    </div>
+    <div class="lightbox"><div class="lightbox-content"><video src="" controls autoplay></video></div><button class="lightbox-close">&times;</button></div>
+    
+    <!-- --- SCROLL PROMPT ELEMENT IS BACK --- -->
+    <div class="scroll-prompt">Keep Scrolling &darr;</div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

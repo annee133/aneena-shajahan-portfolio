@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+:root {
+  --bg-color: #0d0d0f; --fg-color: #e2e2e8; --muted-color: #8a8a93;
+  --accent-color-1: #3b82f6; --border-color: rgba(255, 255, 255, 0.1);
+  --font-script: 'Qwitcher Grypen', cursive; --font-serif: 'Cormorant', serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background-color: var(--bg-color); color: var(--fg-color); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overscroll-behavior: none; }
+a { color: inherit; text-decoration: none; }
+.site-header { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; padding: 2rem; z-index: 100; mix-blend-mode: difference; color: white; }
+.logo { font-weight: 700; }
+.site-nav a { margin-left: 1.5rem; }
+
+/* --- FINAL HERO STYLES --- */
+.hero { position: relative; height: 100svh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+#webgl-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.hero-content { position: relative; z-index: 10; display: flex; align-items: center; gap: 4rem; max-width: 1200px; width: 100%; padding: 0 2rem; }
+.profile-picture { display: block; width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color); flex-shrink: 0; }
+.hero-text {
+  text-align: center; /* Keep it left-aligned for a more professional look */
+  padding-left: 8rem; /* Move it slightly to the right */
+}
+.hero-content h1 {
+  font-family: var(--font-script);
+  font-size: clamp(4.5rem, 9vw, 8rem);
+  line-height: 0.9; /* Tighter line spacing */
+  margin: 0;
+  font-weight: 700;
+  text-transform: none;
+}
+.hero-content p { color: var(--fg-color); margin: 1.5rem 0 0 0; font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 500; letter-spacing: 0.1em; }
+/* --- END OF HERO STYLES --- */
+
+.intro-text-section { position: relative; padding: 25vh 2rem; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, 1fr); align-items: center; gap: 1rem; }
+.intro-canvas { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 120%; z-index: 1; opacity: 0.7; }
+.intro-left { grid-column: 2 / 8; position: relative; z-index: 2; }
+.intro-right { grid-column: 6 / 12; margin-top: 15vh; text-align: right; position: relative; z-index: 2; }
+.intro-paragraph { font-size: clamp(1.5rem, 4vw, 3rem); line-height: 1.3; font-weight: 400; margin: 0; }
+.intro-paragraph em { font-family: var(--font-serif); font-style: italic; font-weight: 700; }
+.skills-section { padding-bottom: 20vh; position: relative; overflow-x: clip; }
+.skills-content { height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; position: sticky; top: 0; padding-top: 15vh; }
+.skills-title { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 10vh; position: relative; z-index: 1; text-align: center; }
+.skills-cards-container { width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 450px; max-width: 300px; display: flex; justify-content: center; align-items: center; perspective: 1200px; }
+.skill-card { position: absolute; width: 300px; height: 450px; }
+.card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 24px; padding: 1.5rem; display: flex; flex-direction: column; border: 2px solid #000000; }
+.card-front { justify-content: center; align-items: center; }
+.card-initial { font-family: var(--font-script); font-size: 8rem; line-height: 1; color: var(--fg-color); opacity: 0.15; }
+.card-back { transform: rotateY(180deg); justify-content: space-between; color: var(--fg-color); font-family: 'Inter', sans-serif; }
+.card-header, .card-footer { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.card-footer { transform: rotateZ(180deg); }
+.card-back ul { list-style: none; padding: 0; margin: 1.5rem 0; font-weight: 500; }
+.card-back li { padding: 0.6rem 0; border-bottom: 1px dotted rgba(255, 255, 255, 0.3); }
+.card-back li:last-child { border-bottom: none; }
+.work-section { padding: 10vh 2rem 20vh; max-width: 1400px; margin: 0 auto;}
+.section-title { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; margin-bottom: 5rem; text-align: center; color: var(--fg-color); }
+.project-list { border-top: 1px solid var(--border-color); }
+.project-item { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border-color); }
+.project-thumbnail { width: 240px; height: 135px; border-radius: 8px; overflow: hidden; background-color: #222; }
+.project-thumbnail img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.project-title { font-size: clamp(1.25rem, 3vw, 2.25rem); font-weight: 500; text-decoration: none; transition: color 0.3s ease; color: var(--fg-color); }
+.project-title:hover { color: var(--accent-color-1); }
+.project-meta { color: var(--muted-color); text-align: right; justify-self: end; }
+.final-sequence { height: 500vh; position: relative; background-color: #000; }
+.final-sequence-content { height: 100vh; width: 100%; position: sticky; top: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+#starfield-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.final-sequence-text { position: relative; z-index: 10; color: white; text-align: center; max-width: 80%; opacity: 0; }
+.final-sequence-text h2 { font-size: clamp(2.5rem, 6vw, 5rem); font-family: var(--font-serif); }
+.final-sequence-endcard { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; opacity: 0; pointer-events: none; z-index: 20; background: radial-gradient(circle, rgba(138, 92, 255, 0.2) 0%, rgba(0,0,0,0) 60%); }
+.final-sequence-endcard.is-visible { opacity: 1; pointer-events: all; }
+.final-sequence-endcard h3 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 4rem); margin: 0; }
+.final-sequence-endcard h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin: 1rem 0 2rem 0; font-family: var(--font-script); }
+.contact-links { display: flex; gap: 1rem; }
+.cta-link { display: inline-block; padding: 1rem 2rem; border: 1px solid var(--muted-color); border-radius: 100px; backdrop-filter: blur(5px); background-color: rgba(255, 255, 255, 0.1); color: white; }
+
+/* --- THE DEFINITIVE AND FINAL FIX FOR CLIPPING --- */
+.split .line {
+  overflow: visible !important;
+}
+.split .word {
+  overflow: visible !important;
+}
+.split .char {
+  overflow: visible !important;
+  display: inline-block;
+}
+/* This is a fallback in case the above isn't enough */
+h1, .intro-paragraph, .skills-title, .section-title {
+  overflow: visible;
+}
+
+
+.cursor, .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; mix-blend-mode: difference; }
+.cursor { width: 8px; height: 8px; background-color: white; border-radius: 50%; transform: translate(-50%, -50%); }
+.cursor-ring { width: 40px; height: 40px; border: 1px solid white; border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s; }
+body.is-hovering .cursor-ring { width: 60px; height: 60px; background-color: rgba(255, 255, 255, 0.5); border-color: rgba(255, 255, 255, 0); }
+.hover-image-container { position: fixed; top: 0; left: 0; width: 400px; height: 250px; pointer-events: none; z-index: 1000; overflow: hidden; opacity: 0; transform: translate(-50%, -50%) scale(0.8); border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+.hover-image-container img, .hover-image-container video { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); }
+.magnetic { display: inline-block; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.lightbox { position: fixed; inset: 0; z-index: 10000; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.lightbox.is-active { opacity: 1; pointer-events: all; }
+.lightbox-content { position: relative; width: 90vw; max-width: 1000px; max-height: 80vh; aspect-ratio: 16 / 9; }
+.lightbox-content video { width: 100%; height: auto; border-radius: 16px; }
+.lightbox-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: white; font-size: 3rem; cursor: pointer; line-height: 1; }
+.scroll-prompt { position: fixed; right: 1.5rem; bottom: 2rem; color: var(--muted-color); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); z-index: 100; opacity: 1; transition: opacity 0.4s ease; display: none; }
+@media (min-width: 768px) { .scroll-prompt { display: block; } }
+@media (max-width: 1024px) {
+  .hero-content { flex-direction: column; text-align: center; gap: 2rem; }
+  .hero-text { padding-left: 0; }
+  .profile-picture { width: 200px; height: 200px; }
+  .intro-text-section { grid-template-columns: 1fr; gap: 2rem; padding: 15vh 1.5rem; }
+  .intro-left, .intro-right { grid-column: 1 / -1; text-align: left; margin-top: 0; }
+  .intro-right { margin-top: 2rem; }
+  .work-section { padding: 10vh 1.5rem; }
+  .project-item { grid-template-columns: 1fr; gap: 1rem; }
+  .project-thumbnail { width: 100%; height: auto; aspect-ratio: 16/9; }
+  .project-meta { text-align: left; justify-self: start; font-size: 0.9rem; }
+}
+@media (max-width: 767px) {
+  .site-header { padding: 1.5rem; }
+  .site-nav a { margin-left: 1rem; font-size: 0.9rem; }
+  .profile-picture { width: 150px; height: 150px; }
+  .skills-section { min-height: 180vh; }
+  .skill-card { width: 280px; height: 420px; }
+  .card-initial { font-size: 6rem; }
+  .card-back h3 { font-size: 1.25rem; }
+  .card-back li { font-size: 0.9rem; padding: 0.4rem 0; }
+  .lightbox-close { top: 1rem; right: 1rem; }
+}
